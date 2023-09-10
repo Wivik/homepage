@@ -1,0 +1,9 @@
+baseURL: 'https://zedas.fr/'
+languageCode: 'en-us'
+title: "Seb's Homepage"
+theme: homepage
+
+params:
+  author: Seb
+  avatar: seb_circle.png
+

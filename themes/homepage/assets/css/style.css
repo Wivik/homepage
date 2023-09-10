@@ -1,0 +1,191 @@
+:root {
+    --font-family: Droid Sans, Noto, "Segoe UI", Arial, Helvetica, "Helvetica Neue", sans-serif;
+    --bg-color: #2E3440;
+    --bg-color-main: #3B4252;
+    --bg-color-article: #434C5E;
+    --bg-color-activities: #81A1C1;
+    --font-color: #D8DEE9;
+    --font-color-activities: #2E3440;
+    --activity-link-color: #434C5E;
+    --activity-link-color-hover: #D8DEE9;
+}
+
+
+html {
+    padding:0;
+    margin:0;
+    height: 100%;
+    width: 100%;
+    font-family: var(--font-family);
+}
+
+body {
+    font-size: 1rem;
+    line-height: 1.5;
+    width: 75%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    margin-left:auto;
+    margin-right:auto;
+    background-color: var(--bg-color);
+    color: var(--font-color);
+}
+
+/* main section */
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    /* height: 100%; */
+    background-color: var(--bg-color-main);
+}
+
+section.about {
+    flex: 25%;
+}
+
+section.activities {
+    flex: 75%;
+    background-color: var(--bg-color-activities);
+    color: var(--font-color-activities);
+}
+
+section.about a:link, section.about a:visited {
+    color: var(--font-color);
+    transition: all 0.2s ease-in-out;
+}
+
+section.about a:hover {
+    text-decoration: none;
+    color: var(--activity-link-color-hover);
+}
+
+article {
+    margin-top: 0.1rem;
+    margin-bottom: 0.1rem;
+    padding: 0.5rem;
+    color: var(--font-color);
+    background-color: var(--bg-color-article);
+}
+
+/* author mode */
+
+article.author {
+    text-align: center;
+}
+
+article.author img {
+    max-width: 150px;
+}
+
+article.thingsido {
+    margin: 0;
+    color: var(--font-color);
+}
+
+/* activities */
+
+article.activities {
+    background: none;
+    border-bottom: 1px solid var(--bg-color-article);
+    color: var(--font-color-activities);
+}
+
+a.activities-title:link, a.activities-title:visited {
+    color: var(--activity-link-color);
+    font-size: larger;
+    font-weight: bold;
+    transition: all 0.2s ease-in-out;
+}
+
+a.activities-title:hover {
+    text-decoration: none;
+    color: var(--activity-link-color-hover);
+}
+
+article.activities a:link, article.activities a:visited {
+    color: var(--activity-link-color);
+    transition: all 0.2s ease-in-out;
+}
+
+article.activities a:hover {
+    text-decoration: none;
+    color: var(--activity-link-color-hover);
+}
+
+/* books */
+
+div.books {
+    display: flex;
+    flex-direction: row;
+}
+
+div.books-content {
+    flex: 1;
+    font-size: small;
+    max-width: 30%;
+    text-align: center;
+    border: 1px solid var(--bg-color-article);
+    margin: 0.2rem;
+}
+
+div.books-content img {
+    max-height: 120px;
+}
+
+div.books-content ul {
+    padding-left: 0.2rem;
+}
+
+div.books-content li {
+    list-style: none;
+    text-align: left;
+}
+
+/* responsive part */
+
+@media (max-width: 960px) {
+    body {
+        width: 99%;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        width: 100%;
+    }
+    main {
+        flex-direction: column;
+    }
+    section.about, section.activities {
+        flex: 100%;
+        /* width: 100%; */
+    }
+    div.books {
+        flex-direction: column;
+    }
+    div.books-content {
+        max-width: 100%;
+    }
+}
+
+/* footer */
+
+footer {
+    background-color: var(--bg-color-article);
+    font-size: smaller;
+    text-align: center;
+    padding-top: 0.5rem;
+}
+
+footer a:link, footer a:visited {
+    color: var(--font-color);
+    transition: all 0.2s ease-in-out;
+}
+
+footer a:hover {
+    text-decoration: none;
+    color: var(--activity-link-color-hover);
+}
