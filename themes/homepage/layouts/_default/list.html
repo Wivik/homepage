@@ -28,40 +28,7 @@
             {{ end }}
             {{ if .Params.books }}
             {{ .Content }}
-            <div class="books">
-            {{ range .Params.books }}
-                <div class="books-content">
-                    <h1>{{ .title }}</h1>
-                    <p><img src="{{ .Site.BaseURL }}{{ .cover }}" /></p>
-                    <ul>
-                        {{ if .genre }}
-                        <li><b>Genre</b> : {{ .genre }}</li>
-                        {{ end }}
-                        {{ if .description }}
-                        <li><b>Description</b> : {{ .description }}</li>
-                        {{ end }}
-                        {{ if .published }}
-                        <li><b>Published in</b> : {{ .published }}</li>
-                        {{ end }}
-                        {{ if .language }}
-                        <li><b>Language</b> : {{ .language }}</li>
-                        {{ end }}
-                        {{ if .freeread }}
-                        <li>- <a href="{{ .freeread }}" target="_blank">Read for Free</a></li>
-                        {{ end }}
-                        {{ if .kindle }}
-                        <li>- <a href="{{ .kindle }}" target="_blank">Buy it to support (Amazon)</a></li>
-                        {{ end }}
-                        {{ if .kobo }}
-                        <li>- <a href="{{ .kobo }}" target="_blank">Buy it to support (Kobo)</a></li>
-                        {{ end }}
-                        {{ if .kofi }}
-                        <li>- <a href="{{ .kofi }}" target="_blank">Buy it to support (Ko-Fi)</a></li>
-                        {{ end }}
-                    </ul>
-                </div>
-            {{ end }}
-            </div>
+            <p><a href="{{ .Page.Permalink }}" style="font-weight: bold;">See books list</a></p>
             {{ else }}
                 {{ .Content }}
             {{ end }}

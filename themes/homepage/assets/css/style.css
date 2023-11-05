@@ -8,6 +8,8 @@
     --font-color-activities: #2E3440;
     --activity-link-color: #434C5E;
     --activity-link-color-hover: #D8DEE9;
+    --bg-color-a-book-link: #5E81AC;
+    --bg-color-a-book-link-hover: #81A1C1;
 }
 
 
@@ -119,29 +121,62 @@ article.activities a:hover {
 
 div.books {
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
-div.books-content {
-    flex: 1;
-    font-size: small;
-    max-width: 30%;
-    text-align: center;
+div.book {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
     border: 1px solid var(--bg-color-article);
     margin: 0.2rem;
 }
 
-div.books-content img {
-    max-height: 120px;
+div.book-title {
+    flex: 1;
+    text-align: center;
+    max-width: 30%;
 }
 
-div.books-content ul {
+div.book-content {
+    flex: 1;
+    max-width: 70%;
+    text-align: center;
+}
+
+div.book-title img {
+    max-height: 180px;
+}
+
+div.book-content ul {
     padding-left: 0.2rem;
 }
 
-div.books-content li {
+div.book-content li {
     list-style: none;
     text-align: left;
+}
+
+ul.book-availability li {
+    margin: 0.5rem;
+    font-weight: bold;
+    border-bottom: 1px solid black;
+    /* padding-bottom: 0.6rem; */
+}
+
+ul.book-availability a:link, ul.book-availability a:visited {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 0.3rem;
+    background-color: var(--bg-color-a-book-link);
+    color: var(--font-color);
+    text-decoration: none;
+    margin: 0.1rem;
+}
+
+ul.book-availability a:hover {
+    background-color: var(--bg-color-a-book-link-hover);
 }
 
 /* responsive part */
@@ -163,10 +198,13 @@ div.books-content li {
         flex: 100%;
         /* width: 100%; */
     }
-    div.books {
+    div.book {
         flex-direction: column;
     }
-    div.books-content {
+    div.book-title {
+        max-width: 100%;
+    }
+    div.book-content {
         max-width: 100%;
     }
 }
